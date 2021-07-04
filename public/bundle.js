@@ -4854,7 +4854,7 @@ var App = function App(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__.default, {
     theme: _theme__WEBPACK_IMPORTED_MODULE_3__.default
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "dest1",
+    id: "test1",
     className: classes.offset
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
@@ -4862,7 +4862,7 @@ var App = function App(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     item: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, "Test 1"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "dest2",
+    id: "test2",
     className: classes.offset
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
@@ -4870,7 +4870,7 @@ var App = function App(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     item: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, " Test 2"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    id: "dest3",
+    id: "test3",
     className: classes.offset
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
@@ -4943,25 +4943,32 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_3__.default)(fun
 var Header = function Header(props) {
   var classes = useStyles(); //const theme = useTheme();
 
+  var linkInfo = [{
+    name: "Test 1",
+    to: "test1",
+    activeIndex: 0
+  }, {
+    name: "Test 2",
+    to: "test2",
+    activeIndex: 1
+  }, {
+    name: "Test 3",
+    to: "test3",
+    activeIndex: 3
+  }];
+  var links = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, linkInfo.map(function (link, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      key: "".concat(link).concat(index),
+      to: link.to,
+      smooth: true,
+      duration: 500,
+      className: classes.links
+    }, link.name);
+  }));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4__.default, {
     position: "fixed",
     className: classes.appbar
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "dest1",
-    smooth: true,
-    duration: 500,
-    className: classes.links
-  }, "Test 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "dest2",
-    smooth: true,
-    duration: 500,
-    className: classes.links
-  }, "Test 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
-    to: "dest3",
-    smooth: true,
-    duration: 500,
-    className: classes.links
-  }, "Test 3"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__.default, null, links)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);

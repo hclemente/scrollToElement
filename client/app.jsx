@@ -31,7 +31,7 @@ const App = (props) => {
     <ThemeProvider theme={theme}>
     <React.Fragment>
       <Header/>
-        <div id="dest1" className={classes.offset}></div>
+        <div id="test1" className={classes.offset}></div>
         <Grid  container className={classes.container}>
           <Grid item>
             {/* <Typography>Test 1</Typography> */}
@@ -39,13 +39,13 @@ const App = (props) => {
 
           </Grid>
         </Grid>
-        <div id="dest2" className={classes.offset}></div>
+        <div id="test2" className={classes.offset}></div>
         <Grid  container  className={classes.container}>
           <Grid item>
             <Typography > Test 2</Typography>
           </Grid>
         </Grid>
-        <div id="dest3" className={classes.offset}></div>
+        <div id="test3" className={classes.offset}></div>
         <Grid container className={classes.container}>
           <Grid item>
             <Typography>Test 3</Typography>

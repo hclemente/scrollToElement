@@ -39,34 +39,34 @@ const Header = (props) => {
   const classes = useStyles();
   //const theme = useTheme();
 
+  const linkInfo = [
+    {name: "Test 1", to: "test1", activeIndex: 0},
+    {name: "Test 2", to: "test2", activeIndex: 1},
+    {name: "Test 3", to: "test3", activeIndex: 3}
+  ]
+
+  const links = (
+    <React.Fragment>
+      {linkInfo.map((link, index) => (
+          <Link
+            key={`${link}${index}`}
+            to={link.to}
+            smooth={true}
+            duration={500}
+            className={classes.links}
+          >
+            {link.name}
+          </Link>
+        )
+      )}
+    </React.Fragment>
+  )
+
   return (
     <React.Fragment>
       <AppBar position="fixed" className={classes.appbar} >
         <Toolbar>
-            <Link
-              to="dest1"
-              smooth={true}
-              duration={500}
-              className={classes.links}
-          >
-              Test 1
-            </Link>
-            <Link
-              to="dest2"
-              smooth={true}
-              duration={500}
-              className={classes.links}
-          >
-              Test 2
-            </Link>
-            <Link
-              to="dest3"
-              smooth={true}
-              duration={500}
-              className={classes.links}
-          >
-              Test 3
-            </Link>
+          {links}
         </Toolbar>
       </AppBar>
       {/* <div className={classes.toolbarMargin} /> */}
