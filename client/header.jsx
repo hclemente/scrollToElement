@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
   },
   appbar: {
 
+  },
+  links: {
+    marginRight: "25px"
   }
 }));
 
@@ -38,12 +41,13 @@ const Header = (props) => {
 
   return (
     <React.Fragment>
-      <AppBar position="sticky" className={classes.appbar} >
+      <AppBar position="fixed" className={classes.appbar} >
         <Toolbar>
             <Link
               to="dest1"
               smooth={true}
               duration={500}
+              className={classes.links}
           >
               Test 1
             </Link>
@@ -51,6 +55,7 @@ const Header = (props) => {
               to="dest2"
               smooth={true}
               duration={500}
+              className={classes.links}
           >
               Test 2
             </Link>
@@ -58,6 +63,7 @@ const Header = (props) => {
               to="dest3"
               smooth={true}
               duration={500}
+              className={classes.links}
           >
               Test 3
             </Link>

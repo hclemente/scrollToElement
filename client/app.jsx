@@ -14,10 +14,13 @@ const ScrollLink = Scroll.ScrollLink
 
 const useStyles = makeStyles(theme => ({
   container: {
-    height: "500px",
+    height: "700px",
     width: "100%",
     justifyContent: "flex-start",
   },
+  offset: {
+    height: "5em"
+  }
 }));
 
 const App = (props) => {
@@ -28,22 +31,22 @@ const App = (props) => {
     <ThemeProvider theme={theme}>
     <React.Fragment>
       <Header/>
-
-        <Grid id="dest1" container className={classes.container}>
+        <div id="dest1" className={classes.offset}></div>
+        <Grid  container className={classes.container}>
           <Grid item>
             {/* <Typography>Test 1</Typography> */}
             <Typography>Test 1</Typography>
 
           </Grid>
         </Grid>
-
-        <Grid id="dest2" container  className={classes.container}>
+        <div id="dest2" className={classes.offset}></div>
+        <Grid  container  className={classes.container}>
           <Grid item>
             <Typography > Test 2</Typography>
           </Grid>
         </Grid>
-
-        <Grid id="dest3"container className={classes.container}>
+        <div id="dest3" className={classes.offset}></div>
+        <Grid container className={classes.container}>
           <Grid item>
             <Typography>Test 3</Typography>
           </Grid>

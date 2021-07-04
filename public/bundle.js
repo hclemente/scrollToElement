@@ -4839,9 +4839,12 @@ var ScrollLink = react_scroll__WEBPACK_IMPORTED_MODULE_4__.default.ScrollLink;
 var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_5__.default)(function (theme) {
   return {
     container: {
-      height: "500px",
+      height: "700px",
       width: "100%",
       justifyContent: "flex-start"
+    },
+    offset: {
+      height: "5em"
     }
   };
 });
@@ -4850,20 +4853,26 @@ var App = function App(props) {
   var classes = useStyles();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__.default, {
     theme: _theme__WEBPACK_IMPORTED_MODULE_3__.default
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_header__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "dest1",
+    className: classes.offset
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
     className: classes.container
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     item: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, "Test 1"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, "Test 1"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "dest2",
+    className: classes.offset
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
     className: classes.container
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     item: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, " Test 2"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_8__.default, null, " Test 2"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     id: "dest3",
+    className: classes.offset
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
     container: true,
     className: classes.container
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
@@ -4924,7 +4933,10 @@ var useStyles = (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_3__.default)(fun
     }), _defineProperty(_objectSpread2, theme.breakpoints.down("xs"), {
       marginBottom: "1.25em"
     }), _objectSpread2)),
-    appbar: {}
+    appbar: {},
+    links: {
+      marginRight: "25px"
+    }
   };
 });
 
@@ -4932,20 +4944,23 @@ var Header = function Header(props) {
   var classes = useStyles(); //const theme = useTheme();
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_AppBar__WEBPACK_IMPORTED_MODULE_4__.default, {
-    position: "sticky",
+    position: "fixed",
     className: classes.appbar
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Toolbar__WEBPACK_IMPORTED_MODULE_5__.default, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "dest1",
     smooth: true,
-    duration: 500
+    duration: 500,
+    className: classes.links
   }, "Test 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "dest2",
     smooth: true,
-    duration: 500
+    duration: 500,
+    className: classes.links
   }, "Test 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_scroll__WEBPACK_IMPORTED_MODULE_2__.Link, {
     to: "dest3",
     smooth: true,
-    duration: 500
+    duration: 500,
+    className: classes.links
   }, "Test 3"))));
 };
 
